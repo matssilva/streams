@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signIn, signOut, setUserId } from '../actions';
+import { setUserId } from '../actions/user';
+import { signIn, signOut } from '../actions/authentication';
 
 class GoogleAuth extends React.Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class GoogleAuth extends React.Component {
     window.gapi.load('client:auth2', () => {
       window.gapi.client
         .init({
-          clientId: '#',
+          clientId:
+            '821970994014-fg3ebdopsqockd6mq2k78mki73it4qv4.apps.googleusercontent.com',
           scope: 'email'
         })
         .then(() => {
